@@ -17,7 +17,7 @@ export default function UploadCSV() {
       setLoading(true);
       await uploadCSV(file);
       alert("CSV uploaded successfully");
-      navigate("/"); // ✅ go back to dashboard
+      navigate("/"); 
     } catch (err: any) {
       alert(err.response?.data?.message || "Upload failed");
     } finally {
