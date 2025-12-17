@@ -15,7 +15,6 @@ export default function Login() {
       const res = await loginApi({ email, password });
       login(res.data.token);
 
-      // ✅ Redirect after successful login
       navigate("/");
     } catch (err: any) {
       alert(err.response?.data?.message || "Login failed");
