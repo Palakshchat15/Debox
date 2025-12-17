@@ -1,0 +1,24 @@
+import Redis from "ioredis";
+
+let redis: Redis | null = null;
+
+try {
+  redis = new Redis({
+    host: "127.0.0.1",
+    port: 6379,
+    lazyConnect: true,  
+    retryStrategy: () => null
+  });
+
+  redis.on("connect", () => {
+    console.log("Redis connected");
+  });
+
+  redis.on("error", () => {
+    console.warn("Redis unavailable, caching disabled");
+  });
+} catch {
+  redis = null;
+}
+
+export { redis };
