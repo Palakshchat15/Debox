@@ -13,13 +13,11 @@ export default function Dashboard() {
     inventory: 0,
   });
 
-  // 🔐 Logout
   const logout = () => {
     localStorage.clear();
     navigate("/login");
   };
 
-  // 📊 Load dashboard stats
   useEffect(() => {
     Promise.all([
       getProducts(),
@@ -37,7 +35,7 @@ export default function Dashboard() {
   return (
     <div className="min-h-screen bg-gray-100 p-6">
       
-      {/* Header */}
+      {/* header */}
       <div className="flex justify-between items-center mb-6">
         <h1 className="text-3xl font-bold">Dashboard</h1>
         <button
@@ -48,7 +46,7 @@ export default function Dashboard() {
         </button>
       </div>
 
-      {/* Cards */}
+      {/* cards */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
         
         <Link

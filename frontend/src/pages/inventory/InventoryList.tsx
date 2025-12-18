@@ -35,7 +35,7 @@ export default function InventoryList() {
             key={i._id}
             className="bg-white p-4 rounded shadow flex justify-between items-center"
           >
-            {/* ✅ Correct field */}
+  
             <span className="font-medium">
               {i.productId?.name || "Unknown Product"}
             </span>
